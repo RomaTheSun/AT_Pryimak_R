@@ -5,8 +5,18 @@ import java.util.stream.Collectors;
 
 public class Task5 {
     public static void main(String[] args) {
+        int numElements = 10;
+        //maven comand mvn exec:java -Dexec.mainClass="task5.Task5" -Dexec.args="20"
+        if (args.length > 0) {
+            try {
+                numElements = Integer.parseInt(args[0]);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid number provided. Using default value of 10.");
+            }
+        }
+
         List<Person> people = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < numElements; i++) {
             people.add(generateRandomPerson());
         }
 
