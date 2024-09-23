@@ -1,6 +1,6 @@
-package task1;
+package task2;
 
-public class task1 {
+public class Task2 {
     public static void main(String[] args) {
         char a = 'a';
 
@@ -16,6 +16,17 @@ public class task1 {
         char lowerCase = Character.toLowerCase(upperCase);
         System.out.println("Lowercase of " + upperCase + " is: " + lowerCase);
     }
+
+    public boolean isDigit(char c) {
+        return Character.isDigit(c);
+    }
+    public boolean isLetter(char c) {
+        return Character.isLetter(c);
+    }
+    public char isUpperCase(char c) {
+        return Character.toUpperCase(c);
+    }
+
 }
 
 

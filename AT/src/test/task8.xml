@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Task8 suite">
+    <test name="Task8_test" thread-count="10" parallel="methods">
+        <packages>
+            <package name="task8.*"/>
+        </packages>
+    </test>
+</suite>

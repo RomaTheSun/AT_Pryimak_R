@@ -1,6 +1,5 @@
-package Task3;
+package task3;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.*;
