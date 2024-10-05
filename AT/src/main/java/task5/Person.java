@@ -1,17 +1,42 @@
 package task5;
+import task7.Address;
+import task7.Company;
+import task7.Project;
+
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.*;
 
-
+@Entity
+@Table(name = "Person")
 public class Person implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private boolean working;
     private long timestamp;
+
+    @ElementCollection
+    @CollectionTable(name = "Person_Friends", joinColumns = @JoinColumn(name = "person_id"))
+    @Column(name = "friend")
     private List<String> friends;
 
-    // Getters and Setters
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "address_id", referencedColumnName = "id")
+    private Address address;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
+
+    @ManyToMany
+    @JoinTable(
+            name = "Person_Project",
+            joinColumns = @JoinColumn(name = "person_id"),
+            inverseJoinColumns = @JoinColumn(name = "project_id")
+    )
+    private List<Project> projects;
 
     public Long getId() {
         return id;
@@ -51,6 +76,30 @@ public class Person implements Serializable {
 
     public void setFriends(List<String> friends) {
         this.friends = friends;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+
+    public void setCompany(Company company) {
+        this.company = company;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
     }
 
     @Override

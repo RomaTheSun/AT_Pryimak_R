@@ -28,6 +28,9 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <!-- Mapping classes -->
-        <mapping class="com.example.model.Person"/>
+        <mapping class="AT.task5.Person"/>
+        <mapping class="AT.task7.Address"/>
+        <mapping class="AT.task7.Company"/>
+        <mapping class="AT.task7.Project"/>
     </session-factory>
 </hibernate-configuration>
