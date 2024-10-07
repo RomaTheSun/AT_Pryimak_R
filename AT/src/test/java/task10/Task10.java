@@ -35,7 +35,6 @@ public class Task10 {
         plusButton.click();
         homeCheckbox.click();
 
-
         // Step 6: Verify visibility of each element using assertions
         Assert.assertTrue(homeExpandButton.isDisplayed(), "homeExpandButton is visible");
         Assert.assertTrue(plusButton.isDisplayed(), "plusButton is visible");
