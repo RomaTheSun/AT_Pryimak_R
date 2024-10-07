@@ -20,7 +20,13 @@ public class CheckBoxBO {
 
     public CheckBoxBO openDesktop(){
         Assert.assertTrue(checkBoxPO.getDesktopArrow().isDisplayed(),"DesktopArrow not displayed");
-        checkBoxPO.getHomeArrow().click();
+        checkBoxPO.getDesktopArrow().click();
+        return this;
+    }
+
+    public CheckBoxBO selectNotes(){
+        Assert.assertTrue(checkBoxPO.getNotesCheckBox().isDisplayed(),"Notes not displayed");
+        checkBoxPO.getNotesCheckBox().click();
         return this;
     }
 }

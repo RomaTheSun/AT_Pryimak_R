@@ -8,29 +8,22 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 public class Task11Test {
-    WebDriver driver;
-
-    @BeforeClass
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-    }
 
     @Test
     void addRowTest(){
         //0)go to checkBox Page
         new CheckBoxBO().gotocheckbox()
         //1)open Home
-                .openHome();
+                .openHome()
         //2)open Desktop
-
+                .openDesktop()
         //3)selected notes
+                .selectNotes();
     }
 
     @AfterClass
     public void quit(){
-        driver.quit();
+        DriverProvider.quitDriver();
     }
 }
 //V10. https://demoqa.com (checkbox)
