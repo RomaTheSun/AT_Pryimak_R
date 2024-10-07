@@ -1,7 +1,5 @@
 package task11;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
 public class CheckBoxBO {
