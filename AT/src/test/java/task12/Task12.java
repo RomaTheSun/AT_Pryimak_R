@@ -1,7 +1,10 @@
 package task12;
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.annotations.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
+import static task11.DriverProvider.getDriver;
 
 public class Task12 {
     @Test
@@ -12,6 +15,7 @@ public class Task12 {
         FormPage formPage = new FormPage(driver);
         formPage.login("test", "test", "1234567890");
         ElementWrapper SubmibButtonWrapper = new ElementWrapper(formPage.submitButton);
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].scrollIntoView({ block: 'center' });", SubmibButtonWrapper);
         SubmibButtonWrapper.click();
 
         AlertHandler alertHandler = new AlertHandler(driver);

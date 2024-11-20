@@ -13,13 +13,13 @@ public class FormPage {
     @FindBy(id = "lastName")
     WebElement lastNameField;
 
-    @FindBy(linkText = "Male")
+    @FindBy(xpath = "//*[@id=\"genterWrapper\"]/div[2]/div[1]")
     WebElement maleGenderButton;
 
     @FindBy(id = "userNumber")
     WebElement userNumberField;
 
-    @FindBy(id = "submit")
+    @FindBy(xpath = "//*[@id=\"userForm\"]/div[11]/div")
     WebElement submitButton;
 
     public FormPage(WebDriver driver) {
