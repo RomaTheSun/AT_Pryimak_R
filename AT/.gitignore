@@ -36,3 +36,9 @@ build/
 
 ### Mac OS ###
 .DS_Store
+
+
+### KEY
+AT/src/main/resources/property.config
+
+AT/src/test/QA_task.postman_collection.json
